@@ -30,10 +30,53 @@ class MyQueue
     end
 
     def dequeue
-        @store.shift
+        @store.pop
     end
 
     def peek
         @store.last
     end
+end
+
+class Map
+
+    def initialize
+        @my_map = []
+    end
+
+    def set(key, value)
+        @my_map.each do |subarr|
+            if subarr[0] == key
+                return self
+            end
+        end
+        
+        @my_map.push([key, value])
+        self
+    end
+
+    def get(key)
+        @my_map.each do |subarr|
+            if subarr[0] == key
+                return subarr[1]
+            end
+        end
+
+        nil
+    end
+
+    def delete(key)
+        @my_map.each do |subarr|
+            if subarr[0] == key
+                @my_map.delete(subarr)
+            end
+        end
+
+        self
+    end
+
+    def show
+        @my_map.dup
+    end
+
 end
