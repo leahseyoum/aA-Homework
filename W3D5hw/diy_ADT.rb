@@ -18,7 +18,7 @@ class Stack
     end
 end
 
-class Queue
+class MyQueue
 
     def initialize
         @store = []
