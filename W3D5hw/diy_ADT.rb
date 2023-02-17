@@ -25,7 +25,7 @@ class MyQueue
     end
 
     def enqueue(el)
-        @store.push(el)
+        @store.unshift(el)
         self
     end
 
